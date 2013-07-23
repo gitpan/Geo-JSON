@@ -1,6 +1,6 @@
 package Geo::JSON::MultiPoint;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiPoint
 
@@ -17,6 +17,7 @@ sub all_positions {
     return [ map { @{$_} } @{ $self->coordinates } ];
 }
 
+
 1;
 
 __END__
@@ -31,7 +32,22 @@ Geo::JSON::MultiPoint - object representing a geojson MultiPoint
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::MultiPoint;
+    my $mpt = Geo::JSON::Point->new({
+        coordinates => [ [ 51.50101, -0.14159 ],
+                         [ 57.596278, -13.687306 ],
+                       ],
+    });
+    my $json = $mpt->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a coordinates attribute consisting of an arrayref of
+positions.
 
 =head1 AUTHOR
 

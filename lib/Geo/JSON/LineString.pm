@@ -1,6 +1,6 @@
 package Geo::JSON::LineString;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson LineString
 
@@ -17,6 +17,7 @@ sub all_positions {
     return [ map { @{$_} } @{ $self->coordinates } ];
 }
 
+
 1;
 
 __END__
@@ -31,7 +32,20 @@ Geo::JSON::LineString - object representing a geojson LineString
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::LineString;
+    my $ls = Geo::JSON::LineString->new({
+        coordinates => [ [ 51.50101, -0.14159 ], ... ],
+    });
+    my $json = $ls->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a coordinates attribute of an arrayref of
+positions.
 
 =head1 AUTHOR
 

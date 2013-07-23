@@ -1,6 +1,6 @@
 package Geo::JSON::Utils;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: Util methods for Geo::JSON classes
 
@@ -16,7 +16,10 @@ our @EXPORT_OK = qw/ compare_positions compute_bbox /;
 sub compare_positions {
     my ( $pos1, $pos2 ) = @_;
 
-    foreach my $dim ( 0 .. $#{$pos1} ) {
+    # Assume positions have same number of dimensions
+    my $dimensions = defined $pos1->[2] ? 2 : 1;
+
+    foreach my $dim ( 0 .. $dimensions ) {
 
         # TODO fix stringification problems...?
         return 0
@@ -35,14 +38,14 @@ sub compute_bbox {
         && ref $positions eq 'ARRAY'
         && @{$positions} > 1;
 
-    # NOTE assumes all have same number of dimensions!
+    # Assumes all have same number of dimensions
 
-    my $dims = $#{ $positions->[0] };
+    my $dimensions = defined $positions->[0]->[2] ? 2 : 1;
 
     my @min = my @max = @{ $positions->[0] };
 
     foreach my $position ( @{$positions} ) {
-        foreach my $d ( 0 .. $dims ) {
+        foreach my $d ( 0 .. $dimensions ) {
             $min[$d] = $position->[$d] if $position->[$d] < $min[$d];
             $max[$d] = $position->[$d] if $position->[$d] > $min[$d];
         }
@@ -66,7 +69,7 @@ Geo::JSON::Utils - Util methods for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 

@@ -1,6 +1,6 @@
 package Geo::JSON::MultiPolygon;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiPolygon
 
@@ -21,6 +21,7 @@ sub all_positions {
     ];
 }
 
+
 1;
 
 __END__
@@ -35,7 +36,25 @@ Geo::JSON::MultiPolygon - object representing a geojson MultiPolygon
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::MultiPolygon;
+    my $mpol = Geo::JSON::MultiPolygon->new({
+        coordinates => [
+            [   [...],     # outer linear ring
+                [...], ... # inner linear ring(s)
+            ],
+            [...],
+            ],
+        },
+    });
+    my $json = $mpol->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a coordinates of an arrayref of polygon coordinates.
 
 =head1 AUTHOR
 

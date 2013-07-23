@@ -1,6 +1,6 @@
 package Geo::JSON::Feature;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson Feature
 
@@ -30,6 +30,7 @@ sub all_positions {
     return [ $self->geometry->all_positions ];
 }
 
+
 1;
 
 __END__
@@ -44,7 +45,21 @@ Geo::JSON::Feature - object representing a geojson Feature
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::Feature;
+    my $ft = Geo::JSON::Feature->new({
+        geometry   => $geometry_object,
+        properties => \%properties,
+    });
+    my $json = $ft->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a geometry attribute of a single Geometry object and
+an optional properties attribute.
 
 =head1 AUTHOR
 

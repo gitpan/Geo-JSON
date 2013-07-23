@@ -27,6 +27,7 @@ my @modules = qw(
   Type::Utils
   Types::Standard
   base
+  lib
   perl
   strict
   warnings

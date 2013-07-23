@@ -1,6 +1,6 @@
 package Geo::JSON::MultiLineString;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiLineString
 
@@ -20,6 +20,7 @@ sub all_positions {
     ];
 }
 
+
 1;
 
 __END__
@@ -34,7 +35,21 @@ Geo::JSON::MultiLineString - object representing a geojson MultiLineString
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::MultiLineString;
+    my $mls = Geo::JSON::MultiLineString->new({
+        coordinates => [ [ 51.50101, -0.14159 ], ... ],
+                       [ [ 54.0, 0 ], ... ],
+    });
+    my $json = $mls->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a coordinates attribute of an arrayref of
+arrayrefs of positions.
 
 =head1 AUTHOR
 

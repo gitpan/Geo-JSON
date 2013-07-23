@@ -1,6 +1,6 @@
 package Geo::JSON::Geometry;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson Geometry
 
@@ -22,6 +22,7 @@ sub all_positions {
     return $self->coordinates;
 }
 
+
 1;
 
 __END__
@@ -36,7 +37,12 @@ Geo::JSON::Geometry - object representing a geojson Geometry
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 DESCRIPTION
+
+Base class for GeoJSON geometry objects (Point, MultiPoint, LineString,
+MultiLineString, Polygon, MultiPolygon).
 
 =head1 AUTHOR
 

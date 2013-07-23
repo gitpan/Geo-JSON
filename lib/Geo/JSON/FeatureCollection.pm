@@ -1,6 +1,6 @@
 package Geo::JSON::FeatureCollection;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson FeatureCollection
 
@@ -24,6 +24,7 @@ sub all_positions {
     return [ map { @{ $_->all_positions } } @{ $self->features } ];
 }
 
+
 1;
 
 __END__
@@ -38,7 +39,20 @@ Geo::JSON::FeatureCollection - object representing a geojson FeatureCollection
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::FeatureCollection;
+    my $fcol = Geo::JSON::FeatureCollection->new({
+         features => \@features,
+    });
+    my $json = $fcol->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a features attribute of an arrayref of
+L<Geo::JSON::Feature> objects.
 
 =head1 AUTHOR
 

@@ -1,6 +1,6 @@
 package Geo::JSON::GeometryCollection;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson GeometryCollection
 
@@ -20,6 +20,7 @@ sub all_positions {
     return [ map { @{ $_->all_positions } } @{ $self->geometries } ];
 }
 
+
 1;
 
 __END__
@@ -34,7 +35,21 @@ Geo::JSON::GeometryCollection - object representing a geojson GeometryCollection
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::GeometryCollection;
+    my $gcol = Geo::JSON::GeometryCollection->new({
+        geometries => [ ... ],
+    });
+    my $json = $mpt->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a geometries attribute consisting of an arrayref of
+Geometry objects (Point, MultiPoint, LineString, MultiLineString, Polygon,
+MultiPolygon).
 
 =head1 AUTHOR
 

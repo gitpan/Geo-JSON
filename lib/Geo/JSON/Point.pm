@@ -1,6 +1,6 @@
 package Geo::JSON::Point;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: object representing a geojson Point
 
@@ -17,6 +17,7 @@ around compute_bbox => sub {
     croak "Can't compute_bbox with a single position";
 };
 
+
 1;
 
 __END__
@@ -31,7 +32,19 @@ Geo::JSON::Point - object representing a geojson Point
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::Point;
+    my $pt = Geo::JSON::Point->new({
+        coordinates => [ 51.50101, -0.14159 ],
+    });
+    my $json = $pt->to_json;
+
+=head1 DESCRIPTION
+
+A GeoJSON object with a coordinates attribute of a single position.
 
 =head1 AUTHOR
 

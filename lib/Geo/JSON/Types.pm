@@ -1,6 +1,6 @@
 package Geo::JSON::Types;
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 # ABSTRACT: Type::Tiny data types for Geo::JSON classes
 
@@ -27,9 +27,10 @@ BEGIN {
     use Geo::JSON::Utils qw/ compare_positions /;
 
     declare Position,    #
-        as Tuple [ Num, Num, Maybe [Num] ];
+        as ArrayRef [Num],    #
+        where { @{$_} >= 2 };
 
-    declare Positions,    #
+    declare Positions,        #
         as ArrayRef [Position],    #
         where { @{$_} > 0 };
 
@@ -81,7 +82,7 @@ Geo::JSON::Types - Type::Tiny data types for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 TYPES EXPORTED
 
