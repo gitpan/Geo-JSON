@@ -1,6 +1,6 @@
 package Geo::JSON::LineString;
 
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 # ABSTRACT: object representing a geojson LineString
 
@@ -32,7 +32,7 @@ Geo::JSON::LineString - object representing a geojson LineString
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

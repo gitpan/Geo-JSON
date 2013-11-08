@@ -1,5 +1,10 @@
 Revision history for Geo-JSON
 
+0.004     2013-11-08 11:22:59 Europe/London
+
+  - Debugging compute_bbox (ignores dimensions beyond 3)
+  - POD/tests for Geo::JSON::Utils
+
 0.003     2013-11-08 10:33:12 Europe/London
 
   - Removed dynamic loading of classes (unnecessary) - thanks to Tim Bunce for spotting security issue here

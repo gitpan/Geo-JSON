@@ -1,6 +1,6 @@
 package Geo::JSON::Polygon;
 
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 # ABSTRACT: object representing a geojson Polygon
 
@@ -34,7 +34,7 @@ Geo::JSON::Polygon - object representing a geojson Polygon
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

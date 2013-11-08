@@ -1,6 +1,6 @@
 package Geo::JSON::MultiLineString;
 
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiLineString
 
@@ -35,7 +35,7 @@ Geo::JSON::MultiLineString - object representing a geojson MultiLineString
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

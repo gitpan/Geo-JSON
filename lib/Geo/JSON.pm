@@ -1,6 +1,6 @@
 package Geo::JSON;
 
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 # ABSTRACT: Perl OO interface for geojson
 
@@ -66,7 +66,7 @@ Geo::JSON - Perl OO interface for geojson
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
@@ -83,7 +83,7 @@ Currently in development - feedback welcome.
 
 Currently supports 2 or 3 dimensions (longitude, latitude, altitude). Further
 dimensions in positions are ignored for calculations and comparisons, but will
-be read-from and writen-to.
+be read-from and written-to.
 
 =head1 GEOJSON SPECIFICATION
 

@@ -1,6 +1,6 @@
 package Geo::JSON::Types;
 
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 # ABSTRACT: Type::Tiny data types for Geo::JSON classes
 
@@ -82,7 +82,7 @@ Geo::JSON::Types - Type::Tiny data types for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 TYPES EXPORTED
 

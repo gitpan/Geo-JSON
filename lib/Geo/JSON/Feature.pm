@@ -1,6 +1,6 @@
 package Geo::JSON::Feature;
 
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 # ABSTRACT: object representing a geojson Feature
 
@@ -45,7 +45,7 @@ Geo::JSON::Feature - object representing a geojson Feature
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
