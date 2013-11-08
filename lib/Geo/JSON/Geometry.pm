@@ -1,6 +1,6 @@
 package Geo::JSON::Geometry;
 
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
 # ABSTRACT: object representing a geojson Geometry
 
@@ -37,7 +37,7 @@ Geo::JSON::Geometry - object representing a geojson Geometry
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

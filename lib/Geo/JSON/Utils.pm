@@ -1,6 +1,6 @@
 package Geo::JSON::Utils;
 
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
 # ABSTRACT: Util methods for Geo::JSON classes
 
@@ -54,7 +54,6 @@ sub compute_bbox {
     return [ @min, @max ];
 }
 
-
 1;
 
 __END__
@@ -69,7 +68,7 @@ Geo::JSON::Utils - Util methods for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

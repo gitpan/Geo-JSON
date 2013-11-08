@@ -1,6 +1,6 @@
 package Geo::JSON::Types;
 
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
 # ABSTRACT: Type::Tiny data types for Geo::JSON classes
 
@@ -55,13 +55,13 @@ BEGIN {
     class_type Feature,  { class => 'Geo::JSON::Feature' };
     class_type Geometry, { class => 'Geo::JSON::Geometry' };
 
-    coerce CRS, from HashRef, q{ "Geo::JSON::CRS"->new($_) };
+    coerce CRS, from HashRef, q{ 'Geo::JSON::CRS'->new($_) };
 
     coerce Feature, from HashRef,
-        q{ ("Geo::JSON::".(delete $_->{type}))->new($_) };
+        q{ ('Geo::JSON::'.(delete $_->{type}))->new($_) };
 
     coerce Geometry, from HashRef,
-        q{ ("Geo::JSON::".(delete $_->{type}))->new($_) };
+        q{ ('Geo::JSON::'.(delete $_->{type}))->new($_) };
 
     declare Features, as ArrayRef [Feature], coercion => 1;
 
@@ -82,7 +82,7 @@ Geo::JSON::Types - Type::Tiny data types for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 TYPES EXPORTED
 

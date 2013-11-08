@@ -21,6 +21,7 @@ my @modules = qw(
   List::Util
   Moo
   Path::Class
+  Test::Fatal
   Test::More
   Test::Most
   Type::Library

@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Perl OO interface for geojson ",
+  "ABSTRACT" => "Perl OO interface for geojson",
   "AUTHOR" => "Michael Jemmeson <mjemmeson\@cpan.org>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
@@ -39,11 +39,12 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "List::Util" => 0,
     "Path::Class" => 0,
+    "Test::Fatal" => 0,
     "Test::More" => 0,
     "Test::Most" => 0,
     "lib" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

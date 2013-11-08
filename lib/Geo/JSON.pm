@@ -1,8 +1,8 @@
 package Geo::JSON;
 
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
-# ABSTRACT: Perl OO interface for geojson 
+# ABSTRACT: Perl OO interface for geojson
 
 use strict;
 use warnings;
@@ -22,7 +22,7 @@ use Geo::JSON::MultiPolygon;
 use Geo::JSON::Point;
 use Geo::JSON::Polygon;
 
-our $json = JSON->new->canonical(1)->pretty->utf8->convert_blessed(1);
+our $json = JSON->new->utf8->convert_blessed(1);
 
 
 sub from_json {
@@ -38,11 +38,19 @@ sub from_json {
 
     my $geo_json_class = 'Geo::JSON::' . $type;
 
-    eval "require $geo_json_class";
-    croak "Unable to load '$geo_json_class'; $@" if $@;
-
     return $geo_json_class->new($data);
 }
+
+
+sub codec {
+    my $class = shift;
+
+    my $orig = $json;
+    $json = shift if @_;
+
+    return $orig;
+}
+
 
 1;
 
@@ -54,11 +62,11 @@ __END__
 
 =head1 NAME
 
-Geo::JSON - Perl OO interface for geojson 
+Geo::JSON - Perl OO interface for geojson
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -174,6 +182,20 @@ An array of Feature objects (as attribute C<features>)
     my $obj = Geo::JSON->from_json( $json );
 
 Takes a geojson string, returns the object it represents.
+
+=head1 CLASS METHODS
+
+=head2 codec
+
+    Geo::JSON->codec->canonical(1)->pretty;
+    
+    my $prev_codec = Geo::JSON->codec($new_codec);
+
+Set options on or replace L<JSON> codec.
+
+=head1 THANKS
+
+Tim Bunce - for codec suggestions and bug spotting.
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 

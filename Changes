@@ -1,5 +1,12 @@
 Revision history for Geo-JSON
 
+0.003     2013-11-08 10:33:12 Europe/London
+
+  - Removed dynamic loading of classes (unnecessary) - thanks to Tim Bunce for spotting security issue here
+  - codec() class method to change JSON behaviour
+  - turned off 'pretty' and 'canonical' in default JSON behaviour
+  - POD/tests/tweaks
+
 0.002     2013-07-23 23:16:15 Europe/London
 
   - POD/tests/tweaks

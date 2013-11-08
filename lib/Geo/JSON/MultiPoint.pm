@@ -1,6 +1,6 @@
 package Geo::JSON::MultiPoint;
 
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiPoint
 
@@ -32,7 +32,7 @@ Geo::JSON::MultiPoint - object representing a geojson MultiPoint
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

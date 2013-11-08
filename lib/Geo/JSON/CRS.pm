@@ -1,6 +1,6 @@
 package Geo::JSON::CRS;
 
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
 # ABSTRACT: Co-ordinate Reference System object
 
@@ -43,7 +43,7 @@ Geo::JSON::CRS - Co-ordinate Reference System object
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -93,10 +93,13 @@ Either 'name' or 'link'
 
 =head2 properties
 
-Hashref. For objects of type 'name', a 'name' key is required, the value being
-a string identifying the CRS. For objects of type 'link', 'href' and 'type' keys
-are required. Link types are not restricted, examples include "proj4", "ogcwkt",
-"esriwkt",
+Hashref.
+
+For objects of type 'name', a 'name' key is required, the value being a
+string identifying the CRS.
+
+For objects of type 'link', 'href' and 'type' keys are required. Link types
+are not restricted, examples include "proj4", "ogcwkt", "esriwkt",
 
 =head1 AUTHOR
 

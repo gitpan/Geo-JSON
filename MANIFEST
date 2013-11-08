@@ -31,7 +31,7 @@ t/json.t
 t/lib/GeoJSONTests.pm
 t/object.t
 t/samples.t
-t/samples/mapit-mysociety-org_area_2496.geojson
+t/samples/sample-1.geojson
 t/types.t
 t/utils.t
 xt/release/distmeta.t
