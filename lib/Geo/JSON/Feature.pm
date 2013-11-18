@@ -1,6 +1,6 @@
 package Geo::JSON::Feature;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: object representing a geojson Feature
 
@@ -12,6 +12,7 @@ use Type::Utils qw( class_type );
 use Types::Standard qw/ Str Maybe HashRef /;
 
 use Geo::JSON::Types -types;
+use Geo::JSON::Utils;
 
 has id => ( is => 'ro', isa => Maybe [Str] );
 
@@ -25,9 +26,7 @@ has geometry => (
 has properties => ( is => 'ro', isa => Maybe [HashRef] );
 
 sub all_positions {
-    my $self = shift;
-
-    return [ $self->geometry->all_positions ];
+    return shift->geometry->all_positions;
 }
 
 
@@ -45,7 +44,7 @@ Geo::JSON::Feature - object representing a geojson Feature
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -60,6 +59,38 @@ version 0.004
 
 A GeoJSON object with a geometry attribute of a single Geometry object and
 an optional properties attribute.
+
+A geometry object is one of the following:
+
+=over
+
+=item *
+
+L<Geo::JSON::Point>
+
+=item *
+
+L<Geo::JSON::MultiPoint>
+
+=item *
+
+L<Geo::JSON::LineString>
+
+=item *
+
+L<Geo::JSON::MultiLineString>
+
+=item *
+
+L<Geo::JSON::Polygon>
+
+=item *
+
+L<Geo::JSON::MultiPolygon>
+
+=back
+
+See L<Geo::JSON> for more details.
 
 =head1 AUTHOR
 

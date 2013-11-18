@@ -6,13 +6,13 @@ META.yml
 Makefile.PL
 README
 README.md
+cpanfile
 dist.ini
 lib/Geo/JSON.pm
 lib/Geo/JSON/Base.pm
 lib/Geo/JSON/CRS.pm
 lib/Geo/JSON/Feature.pm
 lib/Geo/JSON/FeatureCollection.pm
-lib/Geo/JSON/Geometry.pm
 lib/Geo/JSON/GeometryCollection.pm
 lib/Geo/JSON/LineString.pm
 lib/Geo/JSON/MultiLineString.pm
@@ -20,6 +20,8 @@ lib/Geo/JSON/MultiPoint.pm
 lib/Geo/JSON/MultiPolygon.pm
 lib/Geo/JSON/Point.pm
 lib/Geo/JSON/Polygon.pm
+lib/Geo/JSON/Role/Geometry.pm
+lib/Geo/JSON/Role/ToJson.pm
 lib/Geo/JSON/Types.pm
 lib/Geo/JSON/Utils.pm
 t/00-compile.t

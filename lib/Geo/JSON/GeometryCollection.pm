@@ -1,6 +1,6 @@
 package Geo::JSON::GeometryCollection;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: object representing a geojson GeometryCollection
 
@@ -35,7 +35,7 @@ Geo::JSON::GeometryCollection - object representing a geojson GeometryCollection
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -49,7 +49,9 @@ version 0.004
 
 A GeoJSON object with a geometries attribute consisting of an arrayref of
 Geometry objects (Point, MultiPoint, LineString, MultiLineString, Polygon,
-MultiPolygon).
+or MultiPolygon).
+
+See L<Geo::JSON> for more details.
 
 =head1 AUTHOR
 

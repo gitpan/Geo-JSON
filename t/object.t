@@ -2,10 +2,10 @@
 
 use Test::Most;
 
+use Geo::JSON;
+
 use lib 't/lib';
 use GeoJSONTests;
-
-use Geo::JSON;
 
 ok( Geo::JSON->codec->pretty->canonical(1), "set code options" );
 
@@ -21,6 +21,12 @@ foreach my $test ( GeoJSONTests->tests ) {
 
     is_deeply $obj->$_, $test->{args}->{$_}, "args $_ set ok"
         foreach sort keys %{ $test->{args} };
+
+    if ( my $bbox = $test->{compute_bbox} ) {
+        is_deeply $obj->compute_bbox, $bbox, "compute_bbox() ok";
+    } else {
+        dies_ok { $obj->compute_bbox } "Can't compute_bbox()";
+    }
 
     # roundtrip testing
 

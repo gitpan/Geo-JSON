@@ -8,7 +8,6 @@ build_requires:
   File::Find: 0
   File::Spec::Functions: 0
   File::Temp: 0
-  List::Util: 0
   Path::Class: 0
   Test::Fatal: 0
   Test::More: 0
@@ -17,7 +16,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -34,58 +33,65 @@ no_index:
 provides:
   Geo::JSON:
     file: lib/Geo/JSON.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::Base:
     file: lib/Geo/JSON/Base.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::CRS:
     file: lib/Geo/JSON/CRS.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::Feature:
     file: lib/Geo/JSON/Feature.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::FeatureCollection:
     file: lib/Geo/JSON/FeatureCollection.pm
-    version: 0.004
-  Geo::JSON::Geometry:
-    file: lib/Geo/JSON/Geometry.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::GeometryCollection:
     file: lib/Geo/JSON/GeometryCollection.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::LineString:
     file: lib/Geo/JSON/LineString.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::MultiLineString:
     file: lib/Geo/JSON/MultiLineString.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::MultiPoint:
     file: lib/Geo/JSON/MultiPoint.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::MultiPolygon:
     file: lib/Geo/JSON/MultiPolygon.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::Point:
     file: lib/Geo/JSON/Point.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::Polygon:
     file: lib/Geo/JSON/Polygon.pm
-    version: 0.004
+    version: 0.005
+  Geo::JSON::Role::Geometry:
+    file: lib/Geo/JSON/Role/Geometry.pm
+    version: 0.005
+  Geo::JSON::Role::ToJson:
+    file: lib/Geo/JSON/Role/ToJson.pm
+    version: 0.005
   Geo::JSON::Types:
     file: lib/Geo/JSON/Types.pm
-    version: 0.004
+    version: 0.005
   Geo::JSON::Utils:
     file: lib/Geo/JSON/Utils.pm
-    version: 0.004
+    version: 0.005
 requires:
   Carp: 0
   Exporter: 0
   JSON: 0
+  List::Util: 0
   Moo: 0
+  Moo::Role: 0
+  Role::Tiny: 0
   Type::Library: 0
   Type::Utils: 0
   Types::Standard: 0
   base: 0
+  constant: 0
   perl: 5.008
   strict: 0
   warnings: 0
@@ -93,4 +99,4 @@ resources:
   bugtracker: https://github.com/mjemmeson/geo-json/issues
   homepage: https://metacpan.org/release/Geo-JSON
   repository: git://github.com/mjemmeson/geo-json.git
-version: 0.004
+version: 0.005

@@ -1,11 +1,12 @@
 package Geo::JSON::Point;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: object representing a geojson Point
 
 use Moo;
-extends 'Geo::JSON::Geometry';
+extends 'Geo::JSON::Base';
+with 'Geo::JSON::Role::Geometry';
 
 use Carp;
 
@@ -13,9 +14,11 @@ use Geo::JSON::Types -types;
 
 has '+coordinates' => ( isa => Position );
 
-around compute_bbox => sub {
+before compute_bbox => sub {
     croak "Can't compute_bbox with a single position";
 };
+
+sub all_positions { [ shift->coordinates ] }
 
 
 1;
@@ -32,7 +35,7 @@ Geo::JSON::Point - object representing a geojson Point
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -45,6 +48,8 @@ version 0.004
 =head1 DESCRIPTION
 
 A GeoJSON object with a coordinates attribute of a single position.
+
+See L<Geo::JSON> for more details.
 
 =head1 AUTHOR
 

@@ -20,7 +20,9 @@ my @modules = qw(
   JSON
   List::Util
   Moo
+  Moo::Role
   Path::Class
+  Role::Tiny
   Test::Fatal
   Test::More
   Test::Most
@@ -28,6 +30,7 @@ my @modules = qw(
   Type::Utils
   Types::Standard
   base
+  constant
   lib
   perl
   strict

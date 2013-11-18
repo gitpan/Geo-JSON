@@ -1,6 +1,6 @@
 package Geo::JSON::Types;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: Type::Tiny data types for Geo::JSON classes
 
@@ -51,20 +51,19 @@ BEGIN {
     declare Polygons,              #
         as ArrayRef [Polygon];
 
+    declare Geometry, as Object, where { $_->does("Geo::JSON::Role::Geometry") };
+
     class_type CRS,      { class => 'Geo::JSON::CRS' };
     class_type Feature,  { class => 'Geo::JSON::Feature' };
-    class_type Geometry, { class => 'Geo::JSON::Geometry' };
+#    class_type Geometry, { class => 'Geo::JSON::Geometry' };
 
     coerce CRS, from HashRef, q{ 'Geo::JSON::CRS'->new($_) };
 
-    coerce Feature, from HashRef,
-        q{ ('Geo::JSON::'.(delete $_->{type}))->new($_) };
+    coerce Feature, from HashRef, q{ 'Geo::JSON'->load( $_ ) };
 
-    coerce Geometry, from HashRef,
-        q{ ('Geo::JSON::'.(delete $_->{type}))->new($_) };
+    coerce Geometry, from HashRef, q{ 'Geo::JSON'->load( $_ ) };
 
     declare Features, as ArrayRef [Feature], coercion => 1;
-
 }
 
 
@@ -82,7 +81,30 @@ Geo::JSON::Types - Type::Tiny data types for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.004
+version 0.005
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::Types -types;
+
+    has crs          => ( is => 'ro', isa => CRS );
+    has feature      => ( is => 'ro', isa => Feature );
+    has features     => ( is => 'ro', isa => Features );
+    has geometry     => ( is => 'ro', isa => Geometry );
+    has linear_ring  => ( is => 'ro', isa => LinearRing );
+    has line_string  => ( is => 'ro', isa => LineString );
+    has line_strings => ( is => 'ro', isa => LineStrings );
+    has polygon      => ( is => 'ro', isa => Polygon );
+    has polygons     => ( is => 'ro', isa => Polygons );
+    has position     => ( is => 'ro', isa => Position );
+    has positions    => ( is => 'ro', isa => Positions );
+
+=head1 DESCRIPTION
+
+L<Type::Tiny> data types to represent the types used by L<Geo::JSON>
+objects, the types are listed below.
+
+See L<Geo::JSON> for more details.
 
 =head1 TYPES EXPORTED
 

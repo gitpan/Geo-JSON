@@ -1,21 +1,16 @@
 package Geo::JSON::LineString;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: object representing a geojson LineString
 
 use Moo;
-extends 'Geo::JSON::Geometry';
+extends 'Geo::JSON::Base';
+with 'Geo::JSON::Role::Geometry';
 
 use Geo::JSON::Types -types;
 
 has '+coordinates' => ( isa => LineString );
-
-sub all_positions {
-    my $self = shift;
-
-    return [ map { @{$_} } @{ $self->coordinates } ];
-}
 
 
 1;
@@ -32,7 +27,7 @@ Geo::JSON::LineString - object representing a geojson LineString
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -46,6 +41,8 @@ version 0.004
 
 A GeoJSON object with a coordinates attribute of an arrayref of
 positions.
+
+See L<Geo::JSON> for more details.
 
 =head1 AUTHOR
 

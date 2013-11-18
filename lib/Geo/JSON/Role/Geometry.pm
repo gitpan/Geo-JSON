@@ -1,26 +1,14 @@
-package Geo::JSON::Geometry;
+package Geo::JSON::Role::Geometry;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
-# ABSTRACT: object representing a geojson Geometry
+# ABSTRACT: Moo::Role representing behaviour of a geojson Geometry object
 
-use Moo;
-extends 'Geo::JSON::Base';
+use Moo::Role;
 
 use Types::Standard qw/ Any /;
 
-use Geo::JSON::Utils;
-
 has coordinates => ( is => 'ro', isa => Any, required => 1 );
-
-sub compute_bbox {
-    return Geo::JSON::Utils::compute_bbox( shift->all_positions );
-}
-
-sub all_positions {
-    my $self = shift;
-    return $self->coordinates;
-}
 
 
 1;
@@ -33,16 +21,22 @@ __END__
 
 =head1 NAME
 
-Geo::JSON::Geometry - object representing a geojson Geometry
+Geo::JSON::Role::Geometry - Moo::Role representing behaviour of a geojson Geometry object
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 DESCRIPTION
 
-Base class for GeoJSON geometry objects (Point, MultiPoint, LineString,
+L<Moo::Role> for GeoJSON geometry objects (Point, MultiPoint, LineString,
 MultiLineString, Polygon, MultiPolygon).
+
+See L<Geo::JSON> for more details.
+
+=head1 ATTRIBUTES
+
+=head2 coordinates
 
 =head1 AUTHOR
 

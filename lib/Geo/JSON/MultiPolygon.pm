@@ -1,11 +1,12 @@
 package Geo::JSON::MultiPolygon;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiPolygon
 
 use Moo;
-extends 'Geo::JSON::Geometry';
+extends 'Geo::JSON::Base';
+with 'Geo::JSON::Role::Geometry';
 
 use Geo::JSON::Types -types;
 
@@ -15,7 +16,6 @@ sub all_positions {
     my $self = shift;
 
     return [
-        map { @{$_} }
         map { @{$_} }
         map { @{$_} } @{ $self->coordinates }
     ];
@@ -36,7 +36,7 @@ Geo::JSON::MultiPolygon - object representing a geojson MultiPolygon
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -55,6 +55,8 @@ version 0.004
 =head1 DESCRIPTION
 
 A GeoJSON object with a coordinates of an arrayref of polygon coordinates.
+
+See L<Geo::JSON> for more details.
 
 =head1 AUTHOR
 

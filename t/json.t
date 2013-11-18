@@ -22,6 +22,8 @@ foreach my $test (@tests) {
 
     isa_ok $obj, "Geo::JSON::" . $test->{class};
 
+    is_deeply $obj->bbox, $test->{bbox}, "bbox ok" if $test->{bbox};
+
     is $obj->to_json, $json, "to_json ok";
 }
 
@@ -87,7 +89,7 @@ note "Invalid object type";
 
 like(
     exception { Geo::JSON->from_json('{ "type": "XX_INVALID_TYPE_XX" }') },
-    qr/Can't locate object method "new" via package "Geo::JSON::XX_INVALID_TYPE_XX"/,
+    qr/Invalid type 'XX_INVALID_TYPE_XX'/,
     "Dies with invalid type",
 );
 

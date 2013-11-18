@@ -1,32 +1,26 @@
 package Geo::JSON::CRS;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: Co-ordinate Reference System object
 
 use Moo;
+with 'Geo::JSON::Role::ToJson';
+
 use Types::Standard qw/ HashRef /;
 
 use Geo::JSON;
 
 has type => (
-    is  => 'ro',
-    isa => sub {
+    is       => 'ro',
+    required => 1,
+    isa      => sub {
         die "CRS type must be either 'name' or 'link'"
             unless $_[0] && ( $_[0] eq 'name' || $_[0] eq 'link' );
     },
-    required => 1
 );
 
 has properties => ( is => 'ro', isa => HashRef, required => 1 );
-
-sub to_json {
-    return $Geo::JSON::json->encode(shift);
-}
-
-sub TO_JSON {
-    return { type => $_[0]->type, %{ $_[0] } };
-}
 
 
 1;
@@ -43,7 +37,7 @@ Geo::JSON::CRS - Co-ordinate Reference System object
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -84,6 +78,8 @@ GeoJSON CRS "is a geographic coordinate reference system, using the WGS84
 datum, and with longitude and latitude units of decimal degrees."
 
 Set a CRS value on a GeoJSON object to change this.
+
+See L<Geo::JSON> for more details.
 
 =head1 ATTRIBUTES
 

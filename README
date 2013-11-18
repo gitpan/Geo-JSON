@@ -2,12 +2,14 @@ NAME
     Geo::JSON - Perl OO interface for geojson
 
 VERSION
-    version 0.004
+    version 0.005
 
 SYNOPSIS
         use Geo::JSON;
     
         my $obj = Geo::JSON->from_json( $json );
+    
+        $obj->to_json();
 
 DESCRIPTION
     Convert to and from geojson using Perl objects. GeoJSON objects
@@ -33,7 +35,7 @@ GEOJSON MEMBERS (ATTRIBUTES)
     *   "position"
 
         Not explicitly named in the json, but an array of at least two
-        numbers representing a location in x, y, z order. (Either Easting,
+        numbers representing a location in x, y, z order (either Easting,
         Northing, Altitude or Longitude, Latitude, Altitude as appropriate).
 
         Additional numbers may be present but ignored by this package for
@@ -52,14 +54,22 @@ GEOJSON MEMBERS (ATTRIBUTES)
     *   "bbox"
 
         Optional, defining a bounding box that the position(s) are contained
-        by. FIXME define bbox
+        by.
+
+        The box is defined by a array of 2*n items, where n is the number of
+        dimensions in a position. The items are the lowest value for an axis
+        followed by the highest value for an axis, in the axis order used in
+        the positions.
+
+        The Co-ordinates Reference System for the bounding box is assumed to
+        match that of the object.
 
     *   "crs"
 
         Optional, defining the Co-ordinates Reference System the object is
         using. See Geo::JSON::CRS for more details.
 
-OBJECTS
+GEOMETRY OBJECTS
     *   Geo::JSON::Point
 
         A single position
@@ -92,11 +102,13 @@ OBJECTS
         An array of any of the above Geometry objects (as attribute
         "geometries")
 
+FEATURE OBJECTS
     *   Geo::JSON::Feature
 
         Any of the above objects (as attribute "feature"), together with a
         data structure (as attruibute "properties")
 
+FEATURE COLLECTION OBJECTS
     *   Geo::JSON::FeatureCollection
 
         An array of Feature objects (as attribute "features")
@@ -106,6 +118,23 @@ METHODS
         my $obj = Geo::JSON->from_json( $json );
 
     Takes a geojson string, returns the object it represents.
+
+  to_json
+        $obj->to_json();
+        $obj->to_json( $codec );
+
+    Call on a Geo::JSON object. Returns the JSON that represents the object.
+
+    Pass in an optional JSON codec to modify the default behaviour of the
+    JSON returned.
+
+  load
+        my $obj = Geo::JSON->load( { type => 'Point', coordinates => ... } );
+
+    Creates a Geo::JSON object from a hashref.
+
+    This is used for coercion of attributes during object creation, and
+    probably should not be called directly otherwise.
 
 CLASS METHODS
   codec

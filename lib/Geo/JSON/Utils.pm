@@ -1,6 +1,6 @@
 package Geo::JSON::Utils;
 
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # ABSTRACT: Util methods for Geo::JSON classes
 
@@ -28,6 +28,7 @@ sub compare_positions {
             || ( !defined $pos1->[$dim] && defined $pos2->[$dim] )
             || ( $pos1->[$dim] != $pos2->[$dim] );
     }
+
     return 1;
 }
 
@@ -42,14 +43,14 @@ sub compute_bbox {
 
     # Assumes all have same number of dimensions
 
-    my $dimensions = defined $positions->[0]->[2] ? 2 : 1;
+    my $dimensions = scalar @{ $positions->[0] } - 1;
 
-    my @min = my @max = @{ $positions->[0] }[ 0 .. $dimensions ];
+    my @min = my @max = @{ $positions->[0] };
 
     foreach my $position ( @{$positions} ) {
         foreach my $d ( 0 .. $dimensions ) {
             $min[$d] = $position->[$d] if $position->[$d] < $min[$d];
-            $max[$d] = $position->[$d] if $position->[$d] > $min[$d];
+            $max[$d] = $position->[$d] if $position->[$d] > $max[$d];
         }
     }
 
@@ -71,7 +72,11 @@ Geo::JSON::Utils - Util methods for Geo::JSON classes
 
 =head1 VERSION
 
-version 0.004
+version 0.005
+
+=head1 SYNOPSIS
+
+    use Geo::JSON::Utils qw/ compare_positions compute_bbox /;
 
 =head1 DESCRIPTION
 
@@ -90,11 +95,13 @@ dimensions are ignored.
 
 =head2 compute_bbox
 
-    Geo::JSON::Utils::compute_bbox( \@positions );
+    my $bbox = Geo::JSON::Utils::compute_bbox( \@positions );
 
-Computes a bounding box for an arrayref of positions. Bounding box can
-have either two or three dimensions. Any further dimensions will be
-ignored. Assumes points will have same number of dimensions as the first.
+Computes a bounding box for an arrayref of positions. The bounding box is
+a list of all minimum values for all axes followed by all maximum values. The
+values are in the order the axis they appear in the position geometry.
+
+Assumes all points will have same number of dimensions as the first.
 
 =head1 TODO
 
