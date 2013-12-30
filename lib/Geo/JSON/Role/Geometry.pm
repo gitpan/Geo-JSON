@@ -1,6 +1,6 @@
 package Geo::JSON::Role::Geometry;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: Moo::Role representing behaviour of a geojson Geometry object
 
@@ -17,7 +17,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -25,7 +25,7 @@ Geo::JSON::Role::Geometry - Moo::Role representing behaviour of a geojson Geomet
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 

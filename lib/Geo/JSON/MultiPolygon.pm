@@ -1,6 +1,6 @@
 package Geo::JSON::MultiPolygon;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: object representing a geojson MultiPolygon
 
@@ -28,7 +28,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -36,7 +36,7 @@ Geo::JSON::MultiPolygon - object representing a geojson MultiPolygon
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 

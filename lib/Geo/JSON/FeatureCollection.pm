@@ -1,6 +1,6 @@
 package Geo::JSON::FeatureCollection;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: object representing a geojson FeatureCollection
 
@@ -33,7 +33,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -41,7 +41,7 @@ Geo::JSON::FeatureCollection - object representing a geojson FeatureCollection
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package Geo::JSON::Base;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: Base class for Geo::JSON objects
 
@@ -58,7 +58,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -66,7 +66,7 @@ Geo::JSON::Base - Base class for Geo::JSON objects
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 

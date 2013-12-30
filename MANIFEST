@@ -5,7 +5,6 @@ META.json
 META.yml
 Makefile.PL
 README
-README.md
 cpanfile
 dist.ini
 lib/Geo/JSON.pm
@@ -24,7 +23,6 @@ lib/Geo/JSON/Role/Geometry.pm
 lib/Geo/JSON/Role/ToJson.pm
 lib/Geo/JSON/Types.pm
 lib/Geo/JSON/Utils.pm
-t/00-compile.t
 t/00-report-prereqs.t
 t/crs.t
 t/feature.t
@@ -36,6 +34,7 @@ t/samples.t
 t/samples/sample-1.geojson
 t/types.t
 t/utils.t
+xt/author/00-compile.t
 xt/release/distmeta.t
 xt/release/minimum-version.t
 xt/release/pod-coverage.t

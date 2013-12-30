@@ -1,6 +1,6 @@
 package Geo::JSON::CRS;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: Co-ordinate Reference System object
 
@@ -29,7 +29,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -37,7 +37,7 @@ Geo::JSON::CRS - Co-ordinate Reference System object
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 

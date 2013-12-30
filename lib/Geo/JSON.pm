@@ -1,6 +1,6 @@
 package Geo::JSON;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: Perl OO interface for geojson
 
@@ -67,7 +67,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -75,7 +75,7 @@ Geo::JSON - Perl OO interface for geojson
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -245,6 +245,16 @@ Set options on or replace L<JSON> codec.
 
 Tim Bunce - for codec suggestions and bug spotting.
 
+=head1 SEE ALSO
+
+=over
+
+=item *
+
+L<Geo::JSON::Simple> - simple interface to create Geo::JSON objects.
+
+=back
+
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
@@ -252,7 +262,7 @@ Tim Bunce - for codec suggestions and bug spotting.
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through the issue tracker
-at L<https://github.com/mjemmeson/geo-json/issues>.
+at L<https://github.com/mjemmeson/Geo-JSON/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
@@ -260,9 +270,9 @@ You will be notified automatically of any progress on your issue.
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-L<https://github.com/mjemmeson/geo-json>
+L<https://github.com/mjemmeson/Geo-JSON>
 
-  git clone git://github.com/mjemmeson/geo-json.git
+  git clone https://github.com/mjemmeson/Geo-JSON.git
 
 =head1 AUTHOR
 

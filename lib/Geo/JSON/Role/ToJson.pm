@@ -1,10 +1,10 @@
 package Geo::JSON::Role::ToJson;
 
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # ABSTRACT: Moo::Role providing to_json() methods for a geojson object
 
-use Role::Tiny;
+use Moo::Role;
 
 
 sub to_json {
@@ -24,7 +24,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -32,7 +32,7 @@ Geo::JSON::Role::ToJson - Moo::Role providing to_json() methods for a geojson ob
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 

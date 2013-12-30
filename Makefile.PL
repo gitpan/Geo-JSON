@@ -4,7 +4,7 @@ use warnings;
 
 use 5.008;
 
-use ExtUtils::MakeMaker 6.30;
+use ExtUtils::MakeMaker 6.17;
 
 
 
@@ -13,7 +13,7 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Michael Jemmeson <mjemmeson\@cpan.org>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30"
+    "ExtUtils::MakeMaker" => "6.17"
   },
   "DISTNAME" => "Geo-JSON",
   "EXE_FILES" => [],
@@ -26,7 +26,6 @@ my %WriteMakefileArgs = (
     "List::Util" => 0,
     "Moo" => 0,
     "Moo::Role" => 0,
-    "Role::Tiny" => 0,
     "Type::Library" => 0,
     "Type::Utils" => 0,
     "Types::Standard" => 0,
@@ -38,16 +37,14 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Class::Load" => 0,
     "ExtUtils::MakeMaker" => 0,
-    "File::Find" => 0,
     "File::Spec::Functions" => 0,
-    "File::Temp" => 0,
     "Path::Class" => 0,
     "Test::Fatal" => 0,
     "Test::More" => 0,
     "Test::Most" => 0,
     "lib" => 0
   },
-  "VERSION" => "0.005",
+  "VERSION" => "0.006",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -59,15 +56,12 @@ my %FallbackPrereqs = (
   "Class::Load" => 0,
   "Exporter" => 0,
   "ExtUtils::MakeMaker" => 0,
-  "File::Find" => 0,
   "File::Spec::Functions" => 0,
-  "File::Temp" => 0,
   "JSON" => 0,
   "List::Util" => 0,
   "Moo" => 0,
   "Moo::Role" => 0,
   "Path::Class" => 0,
-  "Role::Tiny" => 0,
   "Test::Fatal" => 0,
   "Test::More" => 0,
   "Test::Most" => 0,
